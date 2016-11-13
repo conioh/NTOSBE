@@ -1,0 +1,12 @@
+DIRS= mkmsg       \
+      nmake       \
+      build       \
+      debuggers   \
+      ztools      \
+      alias       \
+      pcopy       \
+      rcdll       \
+      rc          \
+      mc          \
+      touch       \
+      m4

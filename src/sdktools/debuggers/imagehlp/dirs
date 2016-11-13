@@ -1,0 +1,4 @@
+DIRS= tools         \
+      dbghelp       \
+      imagehlp      \
+      binplace

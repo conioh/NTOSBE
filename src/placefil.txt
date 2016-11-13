@@ -1,0 +1,67 @@
+; This file is used to specify where every file built by the NT build lab is
+; binplaced relative to the root of the distribution point.  If a file is not
+; listed, it will end up in the dump directory.
+;
+; The format is like this:
+;
+; <imagename>    <class name>
+;
+; where <imagename> is the filename.ext and <class name> is the directory off
+; the root of the distribution point (retail is a placeholder for the root).
+; If there are multiple class names for a single image, use a colon to separate
+; each.
+;
+; All bits that ship in the NT base product and are installed with winnt32,
+; must have a class name of retail.
+;
+; If you add a new file to the list, please refrain from creating your own
+; special section.  Doing so makes it difficult to detect duplicates.  If
+; you're unable to add your image due to a collision with an existing name,
+; work it out with the other developer.  Options include creating another
+; placefil.txt for your project or using the ALT_PROJECT_TARGET macro in your
+; sources file to change the base of the distribution point (doing so means
+; your project will not install as part of base NT).
+;
+;     sort /+17 < placefil.txt > placefil.srt
+;
+; will generate a list sorted by class name if you want.
+;
+; IMPORTANT NOTE:
+;
+; If you add a file to the system, YOU MUST make sure layout.inf is updated
+; before you start depending on it or else you will cause a BVT break. Do
+; not attempt to modify layout.inf yourself, but follow instructions on:
+;     http://winweb/setup/addtob/default.htm
+;
+;        PLEASE KEEP THIS LIST SORTED
+;---------------------------------------------
+
+alias.exe           bldtools
+assign.dll          dbg\files\bin\winext
+binplace.exe        idw
+build.exe           idw
+cdb.exe             dbg\files\bin
+dbgeng.dll          dbg\files\bin
+dbghelp.dll         dbg\files\bin
+decem.dll           dbg\files\bin
+ext.dll             dbg\files\bin\winext
+exts.dll            dbg\files\bin\winxp
+i386kd.exe          dbg\files\bin
+ia64kd.exe          dbg\files\bin
+imagehlp.dll        retail
+kd.exe              dbg\files\bin
+kext.dll            dbg\files\bin\winext
+m4.exe              bldtools
+mc.exe              bldtools
+mkmsg.exe           bldtools
+nmake.exe           bldtools
+ntsd.exe            dbg\files\bin
+pcopy.exe           bldtools
+rc.exe              bldtools
+rcdll.dll           bldtools
+symbolcheck.dll     dbg\files\bin
+symchk.exe          dbg\files\bin
+touch.exe           bldtools
+tracewpp.exe        bldtools
+uext.dll            dbg\files\bin\winext
+windbg.exe          dbg\files\bin

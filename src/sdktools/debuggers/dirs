@@ -1,0 +1,11 @@
+DIRS= dbg-common    \
+      minidump      \
+      imagehlp      \
+      symchk        \
+      condbg        \
+      exts          \
+      windbg        \
+      dbgrpc        \
+      dbgsvc        \
+      ia64tools     \
+      ntsd64
